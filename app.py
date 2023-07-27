@@ -9,9 +9,9 @@ async def main(message: str):
     # Your custom logic goes here...
    
     response = requests.post(API_URL, 
-                             json={"question": message})
+                             json={"question": message})  
     
     # Send a response back to the user
     await cl.Message(
-        content=f"Received: {response.text}",
+        content=response.text
     ).send()
